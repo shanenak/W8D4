@@ -29,21 +29,21 @@ class Clock {
     // 1. Increment the time by one second.
     // 2. Call printTime.
 
-   this.sec += 1
+    this.sec += 1
 
-   if (this.sec === 60) {
-    this.min += 1
-    this.sec = 0
-   }
-   if (this.min === 60) {
-    this.hour += 1
-    this.min = 0
-   }
-   if (this.hour === 24) {
-    this.hour = 0
-   }
+    if (this.sec === 60) {
+      this.min += 1
+      this.sec = 0
+    }
+    if (this.min === 60) {
+      this.hour += 1
+      this.min = 0
+    }
+    if (this.hour === 24) {
+      this.hour = 0
+    }
     // console.log(this.second, "tick this") 
-   this.printTime()
+    this.printTime()
 
   }
   

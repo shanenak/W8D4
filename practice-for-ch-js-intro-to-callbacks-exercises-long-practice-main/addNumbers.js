@@ -9,7 +9,9 @@ function addNumbers(sum, numsLeft, completionCallback) {
     if (numsLeft > 0) {
         reader.question('Provide a number: ', response => {
             sum += parseInt(response)
+            // completionCallback prints the new sum
             completionCallback(sum)
+            // recursion on new sum and decrement numsLeft
             addNumbers(sum, numsLeft - 1, completionCallback)
             })
         

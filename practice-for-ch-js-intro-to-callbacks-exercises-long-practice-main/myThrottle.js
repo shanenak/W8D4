@@ -1,20 +1,20 @@
-
-
 Function.prototype.myThrottle = function(interval) {
     let tooSoon = false
+    // returns a new func using arrow func (throttled ver of org func)
     return () => {
         if (!tooSoon) {
+            // prevents immediate subsequent calls to the func
             tooSoon = true
             setTimeout(()=>{
-                // console.log(this)
+                // set tooSoon back to false after interval/delay
                 tooSoon = false
+                // ensures that the original function is called with the same context
                 return this.apply()
             }, interval) 
         }
     }
-    
-    
 }
+
 class Neuron {
   fire() {
     console.log("Firing!");

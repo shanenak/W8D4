@@ -1,7 +1,8 @@
 Function.prototype.myBind = function(context) {
-    return () => {
-        this.apply(context)
-    } 
+  // grants receiver access to context through call/apply
+  return () => {
+    this.call(context)
+  } 
 }
 
 
@@ -19,8 +20,8 @@ const lamp = new Lamp();
 
 turnOn(); // should not work the way we want it to
 
-// const boundTurnOn = turnOn.bind(lamp);
-// const myBoundTurnOn = turnOn.myBind(lamp);
+const boundTurnOn = turnOn.bind(lamp);
+const myBoundTurnOn = turnOn.myBind(lamp);
 
 boundTurnOn(); // should say "Turning on a lamp"
 myBoundTurnOn(); // should say "Turning on a lamp"
